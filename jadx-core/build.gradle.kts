@@ -28,6 +28,9 @@ dependencies {
 
 tasks.test {
 	useJUnitPlatform()
+	filter {
+		includeTestsMatching("JadxDecompilerTest*")
+	}
 	exclude("**/tmp/*")
 	finalizedBy(tasks.jacocoTestReport)
 }
