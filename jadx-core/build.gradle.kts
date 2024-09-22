@@ -29,7 +29,7 @@ dependencies {
 tasks.test {
 	useJUnitPlatform()
 	filter {
-		includeTestsMatching("JadxDecompilerTest*")
+		includeTestsMatching("FuzzingTest*")
 	}
 	exclude("**/tmp/*")
 	finalizedBy(tasks.jacocoTestReport)
