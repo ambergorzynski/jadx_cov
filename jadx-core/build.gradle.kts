@@ -1,5 +1,6 @@
 plugins {
 	id("jadx-library")
+	id("jacoco")
 }
 
 dependencies {
@@ -8,8 +9,9 @@ dependencies {
 	implementation("com.google.code.gson:gson:2.11.0")
 
 	testImplementation("org.apache.commons:commons-lang3:3.17.0")
-
+	testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
 	testImplementation(project(":jadx-plugins:jadx-dex-input"))
+	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	testRuntimeOnly(project(":jadx-plugins:jadx-smali-input"))
 	testRuntimeOnly(project(":jadx-plugins:jadx-java-convert"))
 	testRuntimeOnly(project(":jadx-plugins:jadx-java-input"))
@@ -25,5 +27,7 @@ dependencies {
 }
 
 tasks.test {
+	useJUnitPlatform()
 	exclude("**/tmp/*")
+	finalizedBy(tasks.jacocoTestReport)
 }

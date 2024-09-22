@@ -9,6 +9,7 @@ plugins {
 	id("com.github.ben-manes.versions") version "0.51.0"
 	id("se.patrikerdes.use-latest-versions") version "0.2.18"
 	id("com.diffplug.spotless") version "6.25.0"
+	id("jacoco")
 }
 
 val jadxVersion by extra { System.getenv("JADX_VERSION") ?: "dev" }
@@ -21,6 +22,7 @@ allprojects {
 	apply(plugin = "com.diffplug.spotless")
 	apply(plugin = "com.github.ben-manes.versions")
 	apply(plugin = "se.patrikerdes.use-latest-versions")
+	apply(plugin = "jacoco")
 
 	repositories {
 		mavenCentral()
@@ -148,4 +150,9 @@ val dist by tasks.registering {
 val cleanBuildDir by tasks.registering(Delete::class) {
 	delete(layout.buildDirectory)
 }
+
+tasks.named<Test>("test") {
+    useJUnitPlatform()
+}
+
 tasks.getByName("clean").dependsOn(cleanBuildDir)
