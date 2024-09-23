@@ -1,0 +1,21 @@
+<classes>
+            <class>
+                <path>/data/dev/jdtester/cfr_output/eposide-1/3/original-3</path>
+                <name>Test</name>
+            </class>
+            
+            <class>
+                <path>/data/dev/jdtester/cfr_output/eposide-1/4/original-4</path>
+                <name>Test</name>
+            </class>
+            
+            <class>
+                <path>/data/dev/jdtester/cfr_output/eposide-1/2/original-2</path>
+                <name>Test</name>
+            </class>
+            
+            <class>
+                <path>/data/dev/jdtester/cfr_output/eposide-1/1/original-1</path>
+                <name>Test</name>
+            </class>
+</classes>
