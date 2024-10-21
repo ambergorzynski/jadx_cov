@@ -26,6 +26,13 @@ dependencies {
 	testImplementation("tools.profiler:async-profiler:3.0")
 }
 
+tasks.jacocoTestReport {
+	reports {
+		xml.required = false
+		csv.required = true
+	}
+}
+
 tasks.test {
 	useJUnitPlatform()
 	filter {
