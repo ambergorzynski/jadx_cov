@@ -28,8 +28,9 @@ dependencies {
 
 tasks.jacocoTestReport {
 	reports {
-		xml.required = false
+		xml.required = true
 		csv.required = true
+		html.required = true
 	}
 }
 
